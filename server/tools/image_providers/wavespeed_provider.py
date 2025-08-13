@@ -115,7 +115,9 @@ class WavespeedProvider(ImageProviderBase):
             payload = self._build_payload(prompt, input_images, **kwargs)
             request_model = self._get_model_for_request(model, input_images)
 
-            endpoint = f"{self.api_url.rstrip('/')}/{request_model}"
+            config = config_service.app_config.get('wavespeed', {})
+            api_url = str(config.get("url", "")).rstrip("/")
+            endpoint = f"{api_url}/{request_model}"
 
             async with HttpClient.create_aiohttp() as session:
                 async with session.post(endpoint, json=payload, headers=headers) as response:

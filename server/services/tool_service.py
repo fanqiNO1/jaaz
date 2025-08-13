@@ -13,7 +13,8 @@ from tools.generate_image_by_ideogram3_bal_jaaz import (
     generate_image_by_ideogram3_bal_jaaz,
 )
 
-# from tools.generate_image_by_flux_1_1_pro import generate_image_by_flux_1_1_pro
+from tools.generate_image_by_flux_1_1_pro_jaaz import generate_image_by_flux_1_1_pro
+from tools.generate_image_by_flux_1_1_pro_wavespeed import generate_image_by_flux_1_1_pro_wavespeed
 from tools.generate_image_by_flux_kontext_pro_jaaz import (
     generate_image_by_flux_kontext_pro_jaaz,
 )
@@ -32,6 +33,9 @@ from tools.generate_image_by_doubao_seedream_3_jaaz import (
 from tools.generate_image_by_doubao_seedream_3_volces import (
     generate_image_by_doubao_seedream_3_volces,
 )
+from tools.generate_image_by_doubao_seedream_3_wavespeed import (
+    generate_image_by_doubao_seedream_3_wavespeed,
+)
 from tools.generate_image_by_doubao_seededit_3_volces import (
     edit_image_by_doubao_seededit_3_volces,
 )
@@ -42,6 +46,9 @@ from tools.generate_video_by_seedance_v1_pro_volces import (
 from tools.generate_video_by_seedance_v1_lite_volces import (
     generate_video_by_seedance_v1_lite_t2v,
     generate_video_by_seedance_v1_lite_i2v,
+)
+from tools.generate_video_by_seedance_v1_lite_wavespeed import (
+    generate_video_by_seedance_v1_lite_t2v_wavespeed
 )
 from tools.generate_video_by_kling_v2_jaaz import generate_video_by_kling_v2_jaaz
 from tools.generate_image_by_recraft_v3_jaaz import generate_image_by_recraft_v3_jaaz
@@ -79,12 +86,18 @@ TOOL_MAPPING: Dict[str, ToolInfo] = {
         "provider": "jaaz",
         "tool_function": generate_image_by_ideogram3_bal_jaaz,
     },
-    # "generate_image_by_flux_1_1_pro_jaaz": {
-    #     "display_name": "Flux 1.1 Pro",
-    #     "type": "image",
-    #     "provider": "jaaz",
-    #     "tool_function": generate_image_by_flux_1_1_pro,
-    # },
+    "generate_image_by_flux_1_1_pro_jaaz": {
+        "display_name": "Flux 1.1 Pro",
+        "type": "image",
+        "provider": "jaaz",
+        "tool_function": generate_image_by_flux_1_1_pro,
+    },
+    "generate_image_by_flux_1_1_pro_wavespeed": {
+        "display_name": "Flux 1.1 Pro Wavespeed",
+        "type": "image",
+        "provider": "wavespeed",
+        "tool_function": generate_image_by_flux_1_1_pro_wavespeed,
+    },
     "generate_image_by_flux_kontext_pro_jaaz": {
         "display_name": "Flux Kontext Pro",
         "type": "image",
@@ -114,6 +127,12 @@ TOOL_MAPPING: Dict[str, ToolInfo] = {
         "type": "image",
         "provider": "volces",
         "tool_function": generate_image_by_doubao_seedream_3_volces,
+    },
+    "generate_image_by_doubao_seedream_3_wavespeed": {
+        "display_name": "Doubao Seedream 3 by Wavespeed",
+        "type": "image",
+        "provider": "wavespeed",
+        "tool_function": generate_image_by_doubao_seedream_3_wavespeed,
     },
     "edit_image_by_doubao_seededit_3_volces": {
         "display_name": "Doubao Seededit 3 by volces",
@@ -150,6 +169,12 @@ TOOL_MAPPING: Dict[str, ToolInfo] = {
         "type": "video",
         "provider": "volces",
         "tool_function": generate_video_by_seedance_v1_lite_t2v,
+    },
+    "generate_video_by_seedance_v1_lite_t2v_wavespeed": {
+        "display_name": "Doubao Seedance v1 lite(text-to-video)",
+        "type": "video",
+        "provider": "wavespeed",
+        "tool_function": generate_video_by_seedance_v1_lite_t2v_wavespeed,
     },
     "generate_video_by_seedance_v1_lite_i2v_volces": {
         "display_name": "Doubao Seedance v1 lite(images-to-video)",
