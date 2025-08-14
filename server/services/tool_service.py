@@ -9,6 +9,9 @@ from tools.generate_image_by_imagen_4_jaaz import generate_image_by_imagen_4_jaa
 from tools.generate_image_by_imagen_4_replicate import (
     generate_image_by_imagen_4_replicate,
 )
+from tools.generate_image_by_imagen_4_wavespeed import (
+    generate_image_by_imagen_4_wavespeed,
+)
 from tools.generate_image_by_ideogram3_bal_jaaz import (
     generate_image_by_ideogram3_bal_jaaz,
 )
@@ -73,6 +76,12 @@ TOOL_MAPPING: Dict[str, ToolInfo] = {
         "type": "image",
         "provider": "jaaz",
         "tool_function": generate_image_by_imagen_4_jaaz,
+    },
+    "generate_image_by_imagen_4_wavespeed": {
+        "display_name": "Imagen 4 Wavespeed",
+        "type": "image",
+        "provider": "wavespeed",
+        "tool_function": generate_image_by_imagen_4_wavespeed,
     },
     "generate_image_by_recraft_v3_jaaz": {
         "display_name": "Recraft v3",
